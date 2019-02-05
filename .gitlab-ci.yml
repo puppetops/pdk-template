@@ -2,6 +2,8 @@ stages:
   - validation
 
 before_script:
+  - apt-get -y update
+  - apt-get -y install git sudo wget lsb-release
   - .gitlab/install_pdk.sh
 
 Validation:
