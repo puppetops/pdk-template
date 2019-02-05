@@ -1,0 +1,13 @@
+stages:
+  - validation
+
+before_script:
+  - .gitlab/install_pdk.sh
+
+Validation:
+  stage: validation
+  image: ubuntu:18.04
+  before_script:
+    - .gitlab/install_pdk.sh
+  script:
+    - '.gitlab/test_script.sh'
