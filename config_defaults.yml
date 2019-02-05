@@ -537,13 +537,11 @@ Gemfile:
     ruby_versions:
       '2.1.9':
         checks:
-          - 'syntax lint metadata_lint check:symlinks check:git_ignore check:dot_underscore check:test_file rubocop'
           - parallel_spec
         puppet_version: '~> 4.0'
         rubygems_version: '2.7.8'
       '2.4.4':
         checks:
-          - 'syntax lint metadata_lint check:symlinks check:git_ignore check:dot_underscore check:test_file rubocop'
           - parallel_spec
         puppet_version: '~> 5.5'
       '2.5.3':

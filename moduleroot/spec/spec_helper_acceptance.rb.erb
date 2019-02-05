@@ -18,14 +18,13 @@ RSpec.configure do |c|
         host,
         source: module_root,
         module_name: '<%= name -%>',
-        target_module_path: '/etc/puppetlabs/code/modules'
+        target_module_path: '/etc/puppetlabs/code/modules',
       )
       # Install dependencies
       on(host, puppet('module', 'install', 'puppet-python'))
 
       # Add more setup code as needed
       on(host, 'hostname web01.campbellmarketing.net')
-
     end
   end
 end
