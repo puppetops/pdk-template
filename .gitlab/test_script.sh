@@ -5,7 +5,7 @@ set -e # exit immediately on error
 TEMPLATE_PR_DIR=$PWD
 
 # This tricks PDK into testing this commit instead of whatever master is on this repo
-# git update-ref refs/heads/master "$TRAVIS_COMMIT"
+git update-ref refs/heads/master "$CI_COMMIT_SHA"
 
 pdk new module new_module --template-url="file://$TEMPLATE_PR_DIR" --skip-interview
 pushd new_module
