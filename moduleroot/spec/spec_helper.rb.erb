@@ -1,4 +1,6 @@
 <%- if @configs['mock_with'] -%>
+# frozen_string_literal: true
+
 RSpec.configure do |c|
   c.mock_with <%= @configs['mock_with'] %>
 end
