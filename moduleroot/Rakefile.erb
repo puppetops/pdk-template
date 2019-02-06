@@ -24,6 +24,24 @@ import '<%= item %>'
 <%   end -%>
 <% end -%>
 
+desc 'Individual beaker tasks for Acceptance testing'
+namespace :acceptance do
+  desc 'Run beaker tests for our default OS'
+  task :default do
+    sh 'BEAKER_PUPPET_COLLECTION=puppet6 BEAKER_destroy=onpass rspec spec/acceptance'
+  end
+
+  desc 'Run beaker tests in Docker'
+  task :puppet_5 do
+    sh 'BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_destroy=onpass rspec spec/acceptance'
+  end
+
+  desc 'Run beaker tests for all of our accepted OSes'
+  task :puppet_4 do
+    sh 'BEAKER_PUPPET_COLLECTION=puppet4 BEAKER_destroy=onpass rspec spec/acceptance'
+  end
+end
+
 
 <%- [@configs['extras']].flatten.compact.each do |line| -%>
 <%= line %>
